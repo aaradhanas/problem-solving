@@ -1,7 +1,5 @@
 This repository contains  the coding challenges and problems which I have solved. Each file contains the problem statement, sample inputs and expected outputs.
 
-This repository contains  the coding challenges and problems which I have solved. Each file contains the problem statement, sample inputs and expected outputs.
-
 ## Problem 1
 Given an array of numbers in ascending order, return a string which contains clubs consecutive numbers (atleast 3) into a range.. For non-consecutive numbers, the numbers should be directly appended.
 
