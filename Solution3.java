@@ -44,21 +44,36 @@ public class Solution3 {
         return dedup.toString();
     }
 
+
     static String redup(String deduplicatedStr, int chunkSize) {
-        String str = "";
-        for(int i = 0; i< deduplicatedStr.length();i++) {
+        StringBuilder retString = new StringBuilder();
+        String[] outArray = new String[deduplicatedStr.length()];
+
+        for(int i = 0; i< deduplicatedStr.length();) {
             String str1 = deduplicatedStr.substring(i, i + chunkSize);
             int chunkIndex = deduplicatedStr.indexOf(",",i+chunkSize);
-            String chunk = deduplicatedStr.substring(i+chunkSize, chunkIndex);
-            System.out.println(chunk);
+            String[] indexes = deduplicatedStr.substring(i+chunkSize, chunkIndex).split("-");
+
+            for(String s : indexes){
+                if(s.trim().length()!=0){
+                    outArray[Integer.parseInt(s)]=str1;
+                }
+            }
+            i+=chunkIndex+1;
         }
 
-        return "";
+        for(String s: outArray){
+            if(s==null)
+                break;
+            retString.append(s);
+        }
+
+        return retString.toString();
     }
 
     public static void main(String[] args) {
         String dedupStr = dedup("abcdeabcdfabcde", 5);
         System.out.println(dedupStr);
-        //redup(dedupStr, 5);
+        redup(dedupStr, 5);
     }
 }
