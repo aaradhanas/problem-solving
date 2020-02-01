@@ -59,7 +59,7 @@ public class Solution3 {
                     outArray[Integer.parseInt(s)]=str1;
                 }
             }
-            i+=chunkIndex+1;
+            i=chunkIndex+1;
         }
 
         for(String s: outArray){
